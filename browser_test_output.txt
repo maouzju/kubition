@@ -1,0 +1,38 @@
+🚀 启动浏览器测试...
+
+打开游戏: http://localhost:3000/index.html
+
+[31m[浏览器error][0m Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+[31m[浏览器error][0m [BABEL] Note: The code generator has deoptimised the styling of "http://localhost:3000/src/main.js" as it exceeds the max of "100KB".
+[31m[页面错误][0m Uncaught Error: Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.
+✓ 游戏页面已加载
+
+✓ 游戏容器存在
+✓ localStorage可用
+
+测试存档功能...
+✓ 存档保存/读取功能
+
+[33m=== 浏览器已打开，请手动测试以下功能 ===[0m
+1. 点击右上角"菜单"按钮
+2. 点击"设置"标签
+3. 查看是否显示"当前存档槽位"
+4. 查看是否显示10个存档槽位
+5. 尝试保存游戏
+6. 检查是否有红色错误信息
+
+按Ctrl+C退出测试...
+
+[31m✗ 测试失败:[0m page.waitForTimeout is not a function
+
+
+=== 测试报告 ===
+控制台消息: 2 条
+页面错误: 1 个
+
+[31m发现的错误:[0m
+1. Uncaught Error: Minified exception occurred; use the non-minified dev environment for the full error message and additional helpful warnings.
+
+[31m控制台错误:[0m
+1. Failed to load resource: the server responded with a status of 500 (Internal Server Error)
+2. [BABEL] Note: The code generator has deoptimised the styling of "http://localhost:3000/src/main.js" as it exceeds the max of "100KB".
