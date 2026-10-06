@@ -605,10 +605,10 @@ var DebugComponent = React.createClass({
                     <BtnComponent handleClick = {this.log} desc = '输出'/>
                     <BtnComponent handleClick = {this.logState} desc = '输出所有'/>
                     <input id = 'itemName'/>
-                    <input id = 'itemAmount' type = 'number'/>
+                    <input id = 'itemAmount' type = 'number' className = 'needsclick'/>
                     <BtnComponent handleClick = {this.handleAddItem} desc = '添加'/>
                     <BtnComponent handleClick = {this.context.handleDeath.bind(null,'hunger')} desc = '饿死'/>
-                    <input id = 'stairNum' type = 'number'/>
+                    <input id = 'stairNum' type = 'number' className = 'needsclick'/>
                     <BtnComponent handleClick = {this.changeStair} desc = '穿越'/>
                 </div>
             )
@@ -1474,7 +1474,7 @@ var StudioComponent = React.createClass({
                                             <tr>
                                                 <td>{ITEM_DATA[cookResult].name}</td>
                                                 <td>{ITEM_DATA[cookResult].desc}</td>
-                                                <td><input className = 'scheduleInput form-control' value = {String(this.state.cookAmount)} type = 'number' onChange = {this.changeCookAmount}/></td>
+                                                <td><input className = 'scheduleInput form-control needsclick' value = {String(this.state.cookAmount)} type = 'number' onChange = {this.changeCookAmount}/></td>
                                                 <td>耗时:{Math.round(this.getCookTime())}</td>
                                                 <td><BtnComponent disabled = {disabled} desc = '烹调' handleClick = {this.handleCook}/></td>
                                             </tr>
@@ -1569,7 +1569,7 @@ var StudioComponent = React.createClass({
                                 <thead><tr><td>清单</td>{this.props.alwayMakeOne?null:<td>个数</td>}<td>消耗</td><td>耗时</td><td></td></tr></thead>
                                 <tbody><tr>
                                     <td>{ITEM_DATA[name].name}</td>
-                                    {this.props.alwayMakeOne?null:<td><input className = 'scheduleInput form-control' value = {String(amount)} type = 'number' onChange = {this.updateSchedule}/></td>}
+                                    {this.props.alwayMakeOne?null:<td><input className = 'scheduleInput form-control needsclick' value = {String(amount)} type = 'number' onChange = {this.updateSchedule}/></td>}
                                     <td><RequireComponent haveBox = {true} withSpace = {true} showTotal = {true} requireList = {totalRequire} /></td>
                                     <td>{Math.round(this.getTimeNeed(this.props.attachData[name].timeNeed * amount))}</td>
                                     <td><BtnComponent disabled = {disabled} handleClick = {this.make.bind(this,name)} desc = "执行" /></td>
@@ -1704,7 +1704,7 @@ var ActionComponent = React.createClass({
         }
         function getTimeDesc(){
             if (this.props.changable){
-                return <input value = {this.state.timeNeed} className = {'scheduleInput form-control scheduleInput_'+this.props.type} type = 'number' onChange = {this.updateSchedule}/>
+                return <input value = {this.state.timeNeed} className = {'scheduleInput form-control needsclick scheduleInput_'+this.props.type} type = 'number' onChange = {this.updateSchedule}/>
             }else{
                 return <span>{this.props.timeNeed}</span>
             }
@@ -4938,7 +4938,7 @@ var DungeonComponent = React.createClass({
                             <div style = {{marginTop:10,border:'1px solid #ddd'}}>
                                 <p>--到达层--</p>
                                 <div><ProgressComponent key = 'ropeGo' current = {dungeonSaveData.stairData[this.state.ropeGoTo] || 0} max = {MAX_DISCOVER}/></div>
-                                <input className = 'form-control rope' type = 'number'  onChange = {this.handleRopeChange} value = {this.state.ropeGoTo}/>
+                                <input className = 'form-control rope needsclick' type = 'number'  onChange = {this.handleRopeChange} value = {this.state.ropeGoTo}/>
                                 <div>
                                     <BtnComponent disabled = {this.checkRopeDisable()} desc = '前往' handleClick = {this.handleRopeGo}/>
                                 </div>
